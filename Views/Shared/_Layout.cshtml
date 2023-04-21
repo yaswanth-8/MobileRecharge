@@ -7,29 +7,55 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MobileRecharge.styles.css" asp-append-version="true" />
+    <style>
+        .card-custom {
+            background-color: #f2f2f2;
+            border: 1px solid black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px #b3b3cc;
+        }
+
+
+            .card-custom .card-body {
+                border-radius: 10px;
+            }
+
+
+        .box {
+            padding: 40px;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+            box-shadow: 5px 5px 15px #b3b3cc;
+        }
+
+            .box h1 {
+                font-size: 3rem;
+                font-weight:500;
+                text-align: center;
+            }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MobileRecharge</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="RechargeModels" asp-action="Index">Recharge</a>
+                            <a class="nav-link" asp-area="" asp-controller="RechargeModels" asp-action="Index">Recharge</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Histories" asp-action="Index">History</a>
+                            <a class="nav-link" asp-area="" asp-controller="Histories" asp-action="Index">History</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
+                            <a class="nav-link" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />
@@ -37,6 +63,7 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
