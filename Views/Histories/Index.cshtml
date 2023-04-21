@@ -1,0 +1,23 @@
+﻿@model IEnumerable<dynamic>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Plan ID</th>
+            <th>Customer Email</th>
+            <th>Plan Name</th>
+            <th>Plan Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var history in Model)
+        {
+            <tr>
+                <td>@history.PlanId</td>
+                <td>@history.CustomerId</td>
+                <td>@history.PlanName</td>
+                <td>@history.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
