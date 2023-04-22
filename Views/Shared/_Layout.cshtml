@@ -48,15 +48,25 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
+                        @if (User.IsInRole(SD.Role_Admin))
+                        {
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="RechargeModels" asp-action="Index">Recharge</a>
+                            <a class="nav-link" asp-area="" asp-controller="RechargeModels" asp-action="Index">Edit Plans</a>
                         </li>
+                        
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Histories" asp-action="Index">History</a>
+                            </li>
+                        }
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Histories" asp-action="Index">History</a>
+                            <a class="nav-link" asp-area="" asp-controller="Customer" asp-action="Index">Plans</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Customer" asp-action="Index">Customer</a>
-                        </li>
+                        @if (User.IsInRole(SD.Role_Customer))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Customer" asp-action="Profile">Profile</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

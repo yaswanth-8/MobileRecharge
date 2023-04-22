@@ -118,6 +118,7 @@ namespace MobileRecharge.Areas.Identity.Pages.Account
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Customer)).GetAwaiter().GetResult();
                 _roleManager.CreateAsync(new IdentityRole(SD.Role_Company)).GetAwaiter().GetResult();
+                _roleManager.CreateAsync(new IdentityRole("NoLogin")).GetAwaiter().GetResult();
             }
 
             Input = new()
@@ -155,7 +156,7 @@ namespace MobileRecharge.Areas.Identity.Pages.Account
                     }
                     else
                     {
-                        await _userManager.AddToRoleAsync(user, SD.Role_Customer);
+                        await _userManager.AddToRoleAsync(user, "NoLogin");
                     }
 
                     var userId = await _userManager.GetUserIdAsync(user);

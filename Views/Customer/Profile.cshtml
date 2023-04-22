@@ -1,0 +1,53 @@
+﻿@model List<dynamic>
+
+<div class="container">
+    <h1 class="text-center mb-5">Profile</h1>
+    
+    <div class="row mb-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text"><strong>Email:</strong> @User.Identity.Name</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="mb-4">Plans Purchased</h2>
+            @if (ViewBag.PlansPurchased != null && ViewBag.PlansPurchased.Count > 0)
+            {
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Plan Name</th>
+                            <th>Price</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var plan in ViewBag.PlansPurchased)
+                        {
+                            <tr>
+                                <td>@plan.PlanName</td>
+                                <td>@plan.Price</td>
+                                <td>@plan.Description</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <p>No plans purchased.</p>
+            }
+            <div>
+                <a class="btn btn-primary" asp-action="Index">Back to List</a>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
