@@ -66,7 +66,7 @@ namespace MobileRecharge.Controllers
             _context.History.Add(history);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Profile));
+            return Redirect("https://buy.stripe.com/test_5kA8wU6Oo9SXbXGaEE");
         }
 
         [Authorize(Roles = SD.Role_Customer)]

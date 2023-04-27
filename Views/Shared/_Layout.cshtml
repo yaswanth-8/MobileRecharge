@@ -8,13 +8,24 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/MobileRecharge.styles.css" asp-append-version="true" />
     <style>
+        body{
+            background-color: #ebfaf3;
+        }
+        table{
+            background-color:white;
+        }
+
         .card-custom {
-            background-color: #f2f2f2;
+            background-color: #e3e2e1;
             border: 1px solid black;
             border-radius: 10px;
             box-shadow: 5px 5px 15px #b3b3cc;
+            transition: background-color 0.3s ease-in-out; /* Add transition effect */
         }
 
+            .card-custom:hover {
+                background-color: #ffffff;
+            }
 
             .card-custom .card-body {
                 border-radius: 10px;
